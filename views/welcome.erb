@@ -1,0 +1,27 @@
+
+    <h1>Welcome To FDNS Wiki!</h1>
+
+
+    <p>Here we will be sharing our Articles on sciences behind some topics</p>
+
+    <%   @name = params[:firstname] %>
+    <%  if @name == "teddybear" %>
+        <p>Or , you can <a href="/new">create a new page</a></p>
+    <% end %>
+        <% Dir.foreach("pages") {|x|
+      if x=="."||x==".." %>
+            <p></p>
+            <% else %>
+            <a href="/<%= x.chomp(".txt") %>"><%= x.chomp(".txt") %></a>
+        <%end
+          } %>
+
+<br>
+    <br>
+
+
+
+    <form>
+      <input type="password" name="firstname">
+      <input type="submit" value="MEMBER?">
+    </form>
